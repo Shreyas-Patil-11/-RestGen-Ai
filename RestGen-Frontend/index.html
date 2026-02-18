@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Java REST API Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon for tab logo -->
+  <link rel="icon" type="image/png" href="Spring.png" />
+  <!-- Optional for .ico version -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <h1>Java REST API Generator</h1>
+      </header>
+
+      <!-- Form -->
+      <form id="apiForm">
+        <!-- Project Metadata -->
+        <section class="form-section">
+          <h2>📂 Project Metadata</h2>
+          <div class="form-group">
+            <label for="projectName">Project Name</label>
+            <input type="text" id="projectName" placeholder="Enter project name" required />
+          </div>
+          <div class="form-group">
+            <label for="tableName">Table Name</label>
+            <input type="text" id="tableName" placeholder="Enter table name" required />
+          </div>
+          <div class="form-group">
+            <label for="packageName">Package Name</label>
+            <input type="text" id="packageName" placeholder="com.example.demo" required />
+          </div>
+        </section>
+
+        <!-- Table Properties -->
+        <section class="form-section">
+          <h2>📝 Table Properties</h2>
+
+          <!-- Fields Wrapper -->
+          <div id="fields">
+            <!-- Default Field Row -->
+            <div class="field-row">
+              <input type="text" placeholder="Field Name" required />
+              <select>
+                <option>String</option>
+                <option>Integer</option>
+                <option>Long</option>
+                <option>Double</option>
+                <option>Boolean</option>
+                <option>Float</option>
+                <option>Byte</option>
+                <option>Short</option>
+                <option>Char</option>
+                <option>Date</option>
+              </select>
+              <label><input type="checkbox" class="ck-pk" /> Primary Key</label>
+              <label><input type="checkbox" class="ck-nullable" /> Nullable</label>
+              <label><input type="checkbox" class="ck-unique" /> Unique</label>
+            </div>
+          </div>
+
+          <!-- Add More Fields Button -->
+          <button type="button" class="add-btn" id="addFieldBtn">+ Add Field</button>
+        </section>
+
+        <!-- Submit -->
+        <div class="form-actions">
+          <button type="submit" class="submit-btn">Generate API</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="App.js"></script>
+  </body>
+</html>
